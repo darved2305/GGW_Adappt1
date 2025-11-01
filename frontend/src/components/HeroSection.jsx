@@ -71,11 +71,16 @@ export default function HeroSection() {
             transition={{ delay: 0.4 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8"
           >
-            <Button size="lg" className="gradient-primary text-white text-lg px-8 py-6 rounded-xl shadow-lg hover:shadow-xl transition-all">
-              <Mic className="mr-2 h-5 w-5" />
-              Try "Bol ke Banking"
-            </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-6 rounded-xl border-2">
+            <a href="/voice-banking">
+              <Button
+                size="lg"
+                className="gradient-primary text-white text-lg px-8 py-6 rounded-xl shadow-lg hover:shadow-xl transition-all cursor-pointer"
+              >
+                <Mic className="mr-2 h-5 w-5" />
+                Try "Bol ke Banking"
+              </Button>
+            </a>
+            <Button size="lg" variant="outline" className="text-lg px-8 py-6 rounded-xl border-2 cursor-pointer">
               Watch Demo
             </Button>
           </motion.div>

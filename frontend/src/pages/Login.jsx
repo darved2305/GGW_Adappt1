@@ -1,28 +1,34 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import supabase from '../helper/supabaseClient';
 import { login } from '@/lib/auth'
 
 export default function Login() {
-  const [email, setEmail] = useState('ravi.shah@example.com')
-  const [password, setPassword] = useState('')
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("");
   const [error, setError] = useState(null)
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
 
-  async function handleSubmit(e) {
-    e.preventDefault()
-    setLoading(true)
-    setError(null)
-    const user = await login(email, password)
-    setLoading(false)
-    if (user) {
-      // store a simple flag in localStorage to indicate logged in for demo
-      localStorage.setItem('demo_user', JSON.stringify(user))
-      // Redirect to main Home page for the app
-      navigate('/home')
-    } else {
-      setError('Invalid credentials. Use the demo credentials shown on the Sign Up page.')
+  
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setMessage("");
+
+    const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+    if (error) {
+      setMessage(error.message);
     }
+    if (data) {
+      setMessage("Login successful!");
+      navigate('/home');
+    }
+
+    setEmail("");
+    setPassword("");
   }
 
   return (

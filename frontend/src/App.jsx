@@ -13,6 +13,7 @@ import ScamShield from './pages/ScamShield'
 import FinancialGuardian from './pages/FinancialGuardian'
 import Preloader from './components/Preloader'
 import AnimatedGridPattern from './components/ui/animated-grid-pattern'
+import Wrapper from './pages/Wrapper'
 
 function App() {
   const [showPreloader, setShowPreloader] = useState(true)
@@ -33,14 +34,14 @@ function App() {
           <ErrorReporter />
           <Routes>
             <Route path="/" element={<Landing />} />
-            <Route path="/home" element={<Home />} />
+              <Route path="/home" element={<Wrapper><Home /></Wrapper>} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
-            <Route path="/voice-banking" element={<VoiceBanking />} />
-            <Route path="/trust-score" element={<TrustScore />} />
-            <Route path="/guardian" element={<FinancialGuardian />} />
-            <Route path="/simple-banking" element={<SimpleBanking />} />
-            <Route path="/scam-shield" element={<ScamShield />} />
+            <Route path="/voice-banking" element={<Wrapper><VoiceBanking /></Wrapper>} />
+            <Route path="/trust-score" element={<Wrapper><TrustScore /></Wrapper>} />
+            <Route path="/guardian" element={<Wrapper><FinancialGuardian /></Wrapper>} />
+            <Route path="/simple-banking" element={<Wrapper><SimpleBanking /></Wrapper>} />
+            <Route path="/scam-shield" element={<Wrapper><ScamShield /></Wrapper>} />
           </Routes>
           <VisualEditsMessenger />
         </div>
