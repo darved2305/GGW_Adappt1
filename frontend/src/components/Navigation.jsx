@@ -11,7 +11,8 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center">
-            <img src="/logo.png" alt="SahiPay logo" className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-xl object-cover" />
+            {/* use reusable Logo with fallback */}
+            <img src="/logo.png" alt="SahiPay logo" className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-xl object-cover" onError={(e)=>{e.currentTarget.style.display='none'; const s = document.createElement('span'); s.className='font-semibold ml-2'; s.textContent='SahiPay'; e.currentTarget.parentNode.appendChild(s)}} />
             <span className="sr-only">SahiPay</span>
           </Link>
 
@@ -19,6 +20,15 @@ export default function Navigation() {
           <div className="hidden md:flex items-center gap-6">
             <Link to="/pay-insights" className="text-sm font-medium hover:text-primary transition-colors">
               Pay &amp; Insights
+            </Link>
+            <Link to="/financial-advisor" className="text-sm font-medium hover:text-primary transition-colors">
+              Financial Advisor
+            </Link>
+            <Link to="/smart-savings" className="text-sm font-medium hover:text-primary transition-colors">
+              Smart Savings
+            </Link>
+            <Link to="/dashboard" className="text-sm font-medium hover:text-primary transition-colors">
+              Dashboard
             </Link>
             <Link to="/voice-banking" className="text-sm font-medium hover:text-primary transition-colors">
               Voice Banking
@@ -29,9 +39,7 @@ export default function Navigation() {
             <Link to="/guardian" className="text-sm font-medium hover:text-primary transition-colors">
               Guardian
             </Link>
-            <Link to="/simple-banking" className="text-sm font-medium hover:text-primary transition-colors">
-              Simple UI
-            </Link>
+            {/* Simple UI removed from navbar per request */}
             <Link to="/scam-shield" className="text-sm font-medium hover:text-primary transition-colors">
               ScamShield
             </Link>
@@ -55,6 +63,15 @@ export default function Navigation() {
               <Link to="/pay-insights" className="block py-2 text-sm font-medium hover:text-primary transition-colors">
                 Pay &amp; Insights
               </Link>
+              <Link to="/financial-advisor" className="block py-2 text-sm font-medium hover:text-primary transition-colors">
+                Financial Advisor
+              </Link>
+              <Link to="/smart-savings" className="block py-2 text-sm font-medium hover:text-primary transition-colors">
+                Smart Savings
+              </Link>
+              <Link to="/dashboard" className="block py-2 text-sm font-medium hover:text-primary transition-colors">
+                Dashboard
+              </Link>
               <Link to="/voice-banking" className="block py-2 text-sm font-medium hover:text-primary transition-colors">
                 Voice Banking
               </Link>
@@ -64,9 +81,7 @@ export default function Navigation() {
               <Link to="/guardian" className="block py-2 text-sm font-medium hover:text-primary transition-colors">
                 Guardian
               </Link>
-              <Link to="/simple-banking" className="block py-2 text-sm font-medium hover:text-primary transition-colors">
-                Simple UI
-              </Link>
+              {/* Simple UI removed from mobile menu per request */}
               <Link to="/scam-shield" className="block py-2 text-sm font-medium hover:text-primary transition-colors">
                 ScamShield
               </Link>

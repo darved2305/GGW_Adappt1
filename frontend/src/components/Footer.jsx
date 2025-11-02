@@ -9,7 +9,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center">
-              <img src="/logo.png" alt="SahiPay logo" className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-xl object-cover" />
+              <img src="/logo.png" alt="SahiPay logo" className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-xl object-cover" onError={(e)=>{e.currentTarget.style.display='none'; const s = document.createElement('span'); s.className='font-semibold ml-2'; s.textContent='SahiPay'; e.currentTarget.parentNode.appendChild(s)}} />
               <span className="sr-only">SahiPay</span>
             </Link>
             <p className="text-sm text-muted-foreground">

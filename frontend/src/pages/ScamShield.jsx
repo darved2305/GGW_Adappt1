@@ -81,12 +81,7 @@ export default function ScamShieldPage() {
           </div>
         </section>
 
-        {/* Stats Overview */}
-        <section className="px-4 sm:px-6 lg:px-8 py-16 bg-muted/30">
-          <div className="max-w-7xl mx-auto">
-            <ScamStats hindiMode={hindiMode} />
-          </div>
-        </section>
+        {/* Stats Overview removed as requested */}
 
         {/* Interactive Demo */}
         <section className="px-4 sm:px-6 lg:px-8 py-16">
