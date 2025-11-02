@@ -1,0 +1,5 @@
+{
+  "appId": "app.vercel.sahipay",
+  "appName": "SahiPay",
+  "webDir": "frontend/dist"
+}
