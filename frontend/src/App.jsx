@@ -12,6 +12,9 @@ import SimpleBanking from './pages/SimpleBanking'
 import ScamShield from './pages/ScamShield'
 import PayInsights from './pages/PayInsights'
 import FinancialGuardian from './pages/FinancialGuardian'
+import Dashboard from './pages/Dashboard'
+import FinancialAdvisor from './pages/FinancialAdvisor'
+import SmartSavings from './pages/SmartSavings'
 import Preloader from './components/Preloader'
 import AnimatedGridPattern from './components/ui/animated-grid-pattern'
 import Wrapper from './pages/Wrapper'
@@ -49,6 +52,9 @@ function App() {
             <Route path="/simple-banking" element={<SimpleBanking />} />
             <Route path="/pay-insights" element={<PayInsights />} />
             <Route path="/scam-shield" element={<ScamShield />} />
+            <Route path="/financial-advisor" element={<Wrapper><FinancialAdvisor /></Wrapper>} />
+            <Route path="/smart-savings" element={<Wrapper><SmartSavings /></Wrapper>} />
+            <Route path="/dashboard" element={<Wrapper><Dashboard /></Wrapper>} />
           </Routes>
           <VisualEditsMessenger />
         </div>

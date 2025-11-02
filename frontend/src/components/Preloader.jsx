@@ -36,7 +36,7 @@ export default function Preloader({ duration = 3800, onFinish = () => {} }) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-background">
       <div className="flex flex-col items-center gap-6 p-6">
-        <img src="/logo.png" alt="SahiPay logo" className="w-28 h-28 md:w-36 md:h-36 rounded-xl object-cover shadow-lg" />
+  <img src="/logo.png" alt="SahiPay logo" className="w-28 h-28 md:w-36 md:h-36 rounded-xl object-cover shadow-lg" onError={(e)=>{e.currentTarget.style.display='none'; const s = document.createElement('div'); s.className='text-xl font-semibold'; s.textContent='SahiPay'; e.currentTarget.parentNode.insertBefore(s, e.currentTarget.nextSibling)}} />
 
         <div className="text-center max-w-xl">
           <h2 className="text-2xl font-bold">SahiPay — The Financial Guardian</h2>
